@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use('/api/user',userRoute)
 app.use('/api/auth',authRoute)
 app.use('/api/product',productRoute)
-app.use('/api/auth',cartRoute)
+app.use('/api/cart',cartRoute)
 app.use('/api/order',orderRoute)
 
 app.listen(port,'127.0.0.1',()=>{
