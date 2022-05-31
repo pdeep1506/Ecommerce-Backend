@@ -11,7 +11,7 @@ export const register = async(req,res,next)=>{
     const email = req.body.email
     const password = req.body.password
     
-    const exictinguser = await userModel.findOne({email, username})
+    const exictinguser = await userModel.findOne({email,username})
  
     
     if(!exictinguser){
@@ -61,4 +61,10 @@ export const login = async(req,res)=>{
     else{
         res.status(401).json({message:'User with this user name is not in db'})
     }
+}
+
+
+export const logout = async(req,res)=>{
+    res.clearCookie('jwt');
+    res.status(200).json({message:'logout successfully'})
 }
